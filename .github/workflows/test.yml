@@ -263,10 +263,10 @@ jobs:
         conan profile update settings.compiler.version=16 default
 
     - name: Create build directory
-      run: mkdir ${{runner.workspace}}\build
+      run: mkdir ${{runner.workspace}}\exceedingly_long_filename_that_is_intended_to_smoke_out_260_char_filepath_limitations_problems_dating_back_many_decades_on_windows_filesystems
 
     - name: Install dependencies
-      working-directory: ${{runner.workspace}}/build
+      working-directory: ${{runner.workspace}}/exceedingly_long_filename_that_is_intended_to_smoke_out_260_char_filepath_limitations_problems_dating_back_many_decades_on_windows_filesystems
       run: |
         conan install `
           --build=missing `
@@ -278,11 +278,11 @@ jobs:
           $env:GITHUB_WORKSPACE
 
     - name: Build and run tests
-      working-directory: ${{runner.workspace}}/build
+      working-directory: ${{runner.workspace}}/exceedingly_long_filename_that_is_intended_to_smoke_out_260_char_filepath_limitations_problems_dating_back_many_decades_on_windows_filesystems
       run: conan build --build --configure --test $env:GITHUB_WORKSPACE
 
     - name: Run benchmarks
-      working-directory: ${{runner.workspace}}/build
+      working-directory: ${{runner.workspace}}/exceedingly_long_filename_that_is_intended_to_smoke_out_260_char_filepath_limitations_problems_dating_back_many_decades_on_windows_filesystems
       run: test\benchmark\Release\test-benchmark.exe
 
   # Build and test latest on Linux using only CMake
